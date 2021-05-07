@@ -15,7 +15,10 @@ struct TCA_Search_SHOHApp: App {
             let store = Store(
                 initialState: SearchState(),
                 reducer: searchReducer.debug(),
-                environment: SearchEnvironment()
+                environment: SearchEnvironment(
+                    useCase: WeatherUseCase(isStub: false),
+                    mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+                )
             )
             SearchView(store: store)
         }

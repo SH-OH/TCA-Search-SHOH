@@ -10,12 +10,15 @@ import ComposableArchitecture
 
 struct SearchView: View {
     private struct Constants {
+        static let navigationTitle = "Search"
         static let readMe = """
   This application demonstrates live-searching with the Composable Architecture. As you type the \
   events are debounced for 300ms, and when you stop typing an API request is made to load \
   locations. Then tapping on a location will load weather.
   """
         static let placehold = "New York, San Francisco, ..."
+        static let apiProvided = "Weather API provided by MetaWeather.com"
+        static let apiUrl = "http://www.MetaWeather.com"
     }
     let store: Store<SearchState, SearchAction>
     
@@ -54,28 +57,64 @@ struct SearchView: View {
                                     }
                                 })
                                 
-                                if location.id == viewStore.locationWeather.id {
-                                    
+                                if location.id == viewStore.locationWeather?.id {
+                                    if let locationWeather = viewStore.locationWeather {
+                                        WeatherView(locationWeather: locationWeather)
+                                    } else {
+                                        AnyView(EmptyView())
+                                    }
                                 }
                             })
                         }
                     }
+                    
+                    Button(Constants.apiProvided) {
+                        UIApplication.shared.open(URL(string: Constants.apiUrl)!)
+                    }
+                    .foregroundColor(.gray)
+                    .padding(.all, 16)
                 })
+                .navigationTitle(Constants.navigationTitle)
             }
+            .navigationViewStyle(StackNavigationViewStyle())
         }
     }
     
-    struct WeartherView: View {
-        let locationWeather: LocationWeather?
-        
-        var body: some View {
-            guard let locationWeather = locationWeather else {
-                return AnyView(EmptyView())
-            }
-            
+    struct WeatherView: View {
+        let locationWeather: LocationWeather
+        var days: [String] {
+            locationWeather.consolidatedWeather
+                .enumerated()
+                .map { idx, weather in formattedWeatherDay(weather, isToday: idx == 0) }
         }
         
+        var body: some View {
+            VStack(alignment: .leading, content: {
+                List(days, id: \.self) { day in
+                    Text(day)
+                }
+            })
+            .padding(.leading, 16)
+        }
         
+        private func formattedWeatherDay(
+            _ data: LocationWeather.ConsolidatedWeather,
+            isToday: Bool
+        ) -> String {
+            let dateFormatter: DateFormatter = .init()
+            dateFormatter.dateFormat = "EEEE"
+            let date = isToday
+                ? "Today"
+                : dateFormatter.string(from: data.applicableDate).capitalized
+            
+            return [
+                date,
+                "\(Int(round(data.theTemp)))",
+                data.weatherStateName
+            ]
+            .compactMap { $0 }
+            .joined(separator: ", ")
+        }
     }
     
 }
@@ -85,7 +124,10 @@ struct SearchView_Previews: PreviewProvider {
         let store = Store(
             initialState: SearchState(),
             reducer: searchReducer,
-            environment: SearchEnvironment()
+            environment: SearchEnvironment(
+                useCase: WeatherUseCase(isStub: true),
+                mainQueue: DispatchQueue.main.eraseToAnyScheduler()
+            )
         )
         SearchView(store: store)
     }

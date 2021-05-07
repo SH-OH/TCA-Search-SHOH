@@ -18,6 +18,11 @@
 		CB34805E2643B3F000556850 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34805D2643B3F000556850 /* Location.swift */; };
 		CB3480602643B41500556850 /* LocationWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34805F2643B41500556850 /* LocationWeather.swift */; };
 		CB3480632643BC1B00556850 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3480622643BC1B00556850 /* ActivityIndicator.swift */; };
+		CB3480692644E93700556850 /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = CB3480682644E93700556850 /* CombineMoya */; };
+		CB34806B2644E98400556850 /* BaseProviderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34806A2644E98400556850 /* BaseProviderProtocol.swift */; };
+		CB34806D2644EFB100556850 /* WeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34806C2644EFB100556850 /* WeatherUseCase.swift */; };
+		CB34806F2644EFBA00556850 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34806E2644EFBA00556850 /* BaseService.swift */; };
+		CB3480712644F02500556850 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3480702644F02500556850 /* WeatherService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +59,10 @@
 		CB34805D2643B3F000556850 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		CB34805F2643B41500556850 /* LocationWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationWeather.swift; sourceTree = "<group>"; };
 		CB3480622643BC1B00556850 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		CB34806A2644E98400556850 /* BaseProviderProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseProviderProtocol.swift; sourceTree = "<group>"; };
+		CB34806C2644EFB100556850 /* WeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUseCase.swift; sourceTree = "<group>"; };
+		CB34806E2644EFBA00556850 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		CB3480702644F02500556850 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB3480692644E93700556850 /* CombineMoya in Frameworks */,
 				CB3480552643B2FB00556850 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -111,6 +121,7 @@
 				CB3480592643B38600556850 /* Core */,
 				CB3480612643BC0300556850 /* Indicator */,
 				CB34805C2643B3C800556850 /* Models */,
+				CB3480642644E72D00556850 /* Platform */,
 				CB34802E2643B2CE00556850 /* Preview Content */,
 				CB3480562643B35B00556850 /* Search */,
 			);
@@ -176,6 +187,17 @@
 			path = Indicator;
 			sourceTree = "<group>";
 		};
+		CB3480642644E72D00556850 /* Platform */ = {
+			isa = PBXGroup;
+			children = (
+				CB34806A2644E98400556850 /* BaseProviderProtocol.swift */,
+				CB34806E2644EFBA00556850 /* BaseService.swift */,
+				CB3480702644F02500556850 /* WeatherService.swift */,
+				CB34806C2644EFB100556850 /* WeatherUseCase.swift */,
+			);
+			path = Platform;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -194,6 +216,7 @@
 			name = "TCA-Search-SHOH";
 			packageProductDependencies = (
 				CB3480542643B2FB00556850 /* ComposableArchitecture */,
+				CB3480682644E93700556850 /* CombineMoya */,
 			);
 			productName = "TCA-Search-SHOH";
 			productReference = CB3480252643B2CC00556850 /* TCA-Search-SHOH.app */;
@@ -268,6 +291,7 @@
 			mainGroup = CB34801C2643B2CC00556850;
 			packageReferences = (
 				CB3480532643B2FB00556850 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				CB3480672644E93700556850 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = CB3480262643B2CC00556850 /* Products */;
 			projectDirPath = "";
@@ -313,10 +337,14 @@
 			files = (
 				CB34802B2643B2CC00556850 /* SearchView.swift in Sources */,
 				CB34805B2643B39800556850 /* SearchCore.swift in Sources */,
+				CB3480712644F02500556850 /* WeatherService.swift in Sources */,
 				CB34805E2643B3F000556850 /* Location.swift in Sources */,
 				CB3480292643B2CC00556850 /* TCA_Search_SHOHApp.swift in Sources */,
+				CB34806B2644E98400556850 /* BaseProviderProtocol.swift in Sources */,
 				CB3480632643BC1B00556850 /* ActivityIndicator.swift in Sources */,
 				CB3480602643B41500556850 /* LocationWeather.swift in Sources */,
+				CB34806F2644EFBA00556850 /* BaseService.swift in Sources */,
+				CB34806D2644EFB100556850 /* WeatherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -646,6 +674,14 @@
 				minimumVersion = 0.18.0;
 			};
 		};
+		CB3480672644E93700556850 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = exactVersion;
+				version = "15.0.0-alpha.1";
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -653,6 +689,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CB3480532643B2FB00556850 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		CB3480682644E93700556850 /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CB3480672644E93700556850 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
