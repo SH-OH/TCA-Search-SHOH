@@ -11,7 +11,7 @@ import ComposableArchitecture
 struct WeatherUseCase: BaseProviderProtocol {
     var provider: MoyaProvider<WeatherService>
     
-    init(isStub: Bool) {
+    init(isStub: Bool = false) {
         self.provider = Self.initProvider(isStub)
     }
     

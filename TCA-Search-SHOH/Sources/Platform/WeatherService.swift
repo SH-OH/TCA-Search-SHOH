@@ -36,7 +36,12 @@ extension WeatherService: BaseService, TargetType {
     }
     
     var sampleData: Data {
-        .init()
+        switch self {
+        case .getSearchLocation:
+            return Self.getSampleData("GetSearchLocation")
+        case .getWeather:
+            return Self.getSampleData("GetWeather")
+        }
     }
     
     var task: Task {

@@ -1,0 +1,20 @@
+[
+    {
+        "title": "Seoul",
+        "location_type": "City",
+        "woeid": 1132599,
+        "latt_long": "37.557121,126.977379"
+    },
+    {
+        "title": "Toulouse",
+        "location_type": "City",
+        "woeid": 628886,
+        "latt_long": "43.605728,1.448690"
+    },
+    {
+        "title": "Boulder",
+        "location_type": "City",
+        "woeid": 2367231,
+        "latt_long": "40.02779,-105.252487"
+    }
+]

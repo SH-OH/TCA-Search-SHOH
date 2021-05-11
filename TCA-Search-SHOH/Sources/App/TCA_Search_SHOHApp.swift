@@ -16,7 +16,7 @@ struct TCA_Search_SHOHApp: App {
                 initialState: SearchState(),
                 reducer: searchReducer.debug(),
                 environment: SearchEnvironment(
-                    useCase: WeatherUseCase(isStub: false),
+                    useCase: WeatherUseCase(),
                     mainQueue: DispatchQueue.main.eraseToAnyScheduler()
                 )
             )

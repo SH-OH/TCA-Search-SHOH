@@ -11,3 +11,10 @@ struct Location: Decodable, Equatable, Identifiable {
     let id: Int
     let title: String
 }
+
+extension Location {
+    private enum CodingKeys: String, CodingKey {
+      case id = "woeid"
+      case title
+    }
+}

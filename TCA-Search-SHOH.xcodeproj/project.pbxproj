@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB0723D5264A3838001E7DB2 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0723D4264A3838001E7DB2 /* SearchBar.swift */; };
+		CB0723D7264A3A2F001E7DB2 /* SearchList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB0723D6264A3A2F001E7DB2 /* SearchList.swift */; };
 		CB3480292643B2CC00556850 /* TCA_Search_SHOHApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3480282643B2CC00556850 /* TCA_Search_SHOHApp.swift */; };
 		CB34802B2643B2CC00556850 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34802A2643B2CC00556850 /* SearchView.swift */; };
 		CB34802D2643B2CE00556850 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB34802C2643B2CE00556850 /* Assets.xcassets */; };
@@ -23,6 +25,7 @@
 		CB34806D2644EFB100556850 /* WeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34806C2644EFB100556850 /* WeatherUseCase.swift */; };
 		CB34806F2644EFBA00556850 /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB34806E2644EFBA00556850 /* BaseService.swift */; };
 		CB3480712644F02500556850 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB3480702644F02500556850 /* WeatherService.swift */; };
+		CB596986264613720080964B /* GetSearchLocation.json in Resources */ = {isa = PBXBuildFile; fileRef = CB596985264613720080964B /* GetSearchLocation.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CB0723D4264A3838001E7DB2 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		CB0723D6264A3A2F001E7DB2 /* SearchList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchList.swift; sourceTree = "<group>"; };
 		CB3480252643B2CC00556850 /* TCA-Search-SHOH.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TCA-Search-SHOH.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB3480282643B2CC00556850 /* TCA_Search_SHOHApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TCA_Search_SHOHApp.swift; sourceTree = "<group>"; };
 		CB34802A2643B2CC00556850 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -63,6 +68,7 @@
 		CB34806C2644EFB100556850 /* WeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUseCase.swift; sourceTree = "<group>"; };
 		CB34806E2644EFBA00556850 /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
 		CB3480702644F02500556850 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		CB596985264613720080964B /* GetSearchLocation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = GetSearchLocation.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,14 +122,9 @@
 			isa = PBXGroup;
 			children = (
 				CB3480312643B2CE00556850 /* Info.plist */,
-				CB3480282643B2CC00556850 /* TCA_Search_SHOHApp.swift */,
-				CB34802C2643B2CE00556850 /* Assets.xcassets */,
-				CB3480592643B38600556850 /* Core */,
-				CB3480612643BC0300556850 /* Indicator */,
-				CB34805C2643B3C800556850 /* Models */,
-				CB3480642644E72D00556850 /* Platform */,
 				CB34802E2643B2CE00556850 /* Preview Content */,
-				CB3480562643B35B00556850 /* Search */,
+				CB59697F264612B30080964B /* Resources */,
+				CB596980264612BE0080964B /* Sources */,
 			);
 			path = "TCA-Search-SHOH";
 			sourceTree = "<group>";
@@ -157,6 +158,8 @@
 		CB3480562643B35B00556850 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				CB0723D4264A3838001E7DB2 /* SearchBar.swift */,
+				CB0723D6264A3A2F001E7DB2 /* SearchList.swift */,
 				CB34802A2643B2CC00556850 /* SearchView.swift */,
 			);
 			path = Search;
@@ -168,15 +171,6 @@
 				CB34805A2643B39800556850 /* SearchCore.swift */,
 			);
 			path = Core;
-			sourceTree = "<group>";
-		};
-		CB34805C2643B3C800556850 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				CB34805D2643B3F000556850 /* Location.swift */,
-				CB34805F2643B41500556850 /* LocationWeather.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		CB3480612643BC0300556850 /* Indicator */ = {
@@ -196,6 +190,61 @@
 				CB34806C2644EFB100556850 /* WeatherUseCase.swift */,
 			);
 			path = Platform;
+			sourceTree = "<group>";
+		};
+		CB59697F264612B30080964B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CB596984264613200080964B /* Samples */,
+				CB34802C2643B2CE00556850 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CB596980264612BE0080964B /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				CB596981264612C40080964B /* App */,
+				CB3480592643B38600556850 /* Core */,
+				CB596983264613080080964B /* Domain */,
+				CB3480642644E72D00556850 /* Platform */,
+				CB596982264612F10080964B /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		CB596981264612C40080964B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CB3480282643B2CC00556850 /* TCA_Search_SHOHApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		CB596982264612F10080964B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				CB3480612643BC0300556850 /* Indicator */,
+				CB3480562643B35B00556850 /* Search */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		CB596983264613080080964B /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				CB34805D2643B3F000556850 /* Location.swift */,
+				CB34805F2643B41500556850 /* LocationWeather.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		CB596984264613200080964B /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				CB596985264613720080964B /* GetSearchLocation.json */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB596986264613720080964B /* GetSearchLocation.json in Resources */,
 				CB3480302643B2CE00556850 /* Preview Assets.xcassets in Resources */,
 				CB34802D2643B2CE00556850 /* Assets.xcassets in Resources */,
 			);
@@ -340,10 +390,12 @@
 				CB3480712644F02500556850 /* WeatherService.swift in Sources */,
 				CB34805E2643B3F000556850 /* Location.swift in Sources */,
 				CB3480292643B2CC00556850 /* TCA_Search_SHOHApp.swift in Sources */,
+				CB0723D7264A3A2F001E7DB2 /* SearchList.swift in Sources */,
 				CB34806B2644E98400556850 /* BaseProviderProtocol.swift in Sources */,
 				CB3480632643BC1B00556850 /* ActivityIndicator.swift in Sources */,
 				CB3480602643B41500556850 /* LocationWeather.swift in Sources */,
 				CB34806F2644EFBA00556850 /* BaseService.swift in Sources */,
+				CB0723D5264A3838001E7DB2 /* SearchBar.swift in Sources */,
 				CB34806D2644EFB100556850 /* WeatherUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
